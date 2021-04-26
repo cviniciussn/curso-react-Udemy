@@ -14,6 +14,8 @@ import Produtos from './components/repeticao/TabelaProdutos'
 import ParOuImpar from './components/condicional/ParouImpar'
 import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPAi from './components/comunicacao/DiretaPai'
+import IndiretaPAi from './components/comunicacao/IndiretaPai'
+import Input from './components/formulario/Input'
 
 
 export default _ =>
@@ -22,6 +24,15 @@ export default _ =>
         <h1>Fundamentos React</h1>
 
         <div className="Cards">
+
+            <Card titulo='#12 - Componente Controlado' tt='#6495ED'>
+                <Input/>
+            </Card>
+
+
+            <Card titulo='#11 - Comunicação Indireta' tt='#cc0077'>
+                <IndiretaPAi/>
+            </Card>
 
             <Card titulo='#10 - Comunicação Direta' tt='#665066'>
                 <DiretaPAi/>
