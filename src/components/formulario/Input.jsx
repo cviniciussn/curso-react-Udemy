@@ -4,7 +4,7 @@ import './input.css'
 
 export default (props)=>{
 
-    const [valor, setValor] = useState("Exemplo")
+    const [valor, setValor] = useState("")
     
     function handle(e){
         setValor(e.target.value)
