@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
+import './contador.css'
+import Display from './display'
+import Botoes from './botoes'
+import Form from './passoForm'
 
 class Contador extends React.Component {
 
 
     state = {
         numero: this.props.numeroInicial || 0,
-        fixo: this.props.numeroInicial,
         passo: this.props.passoInicial || 5,
+        fixo: this.props.numeroInicial || 0,
     }
 
 
-    inc(){
+    inc = () => {
         this.setState({
 
             numero: this.state.numero + this.state.passo
@@ -18,28 +22,36 @@ class Contador extends React.Component {
         })
     }
 
-    clean(){
+    clean = () => {
         this.setState({
-            numero: this.state.fixo
+            numero: this.state.fixo,
+            passo: this.state.fixo,
         })
     }
 
-    dec(){
+    dec = () => {
         this.setState({
             numero: this.state.numero - this.state.passo,
         })
     }
 
+    setPasso = (novoPasso) => {
+        this.setState({
+            passo: novoPasso,
+        })
+    }
+
+
 
 
     render() {
         return (
-            <div>
+            <div className="Contador">
                 <h2>Contador</h2>
-                <h3>Valor Atual: {this.state.numero}</h3>
-                <button onClick={_ => this.inc()}>Incrementar</button>
-                <button onClick={_ => this.clean()}>Limpar</button>
-                <button onClick={_ => this.dec()}>Decrementar</button>
+                <Display numero={this.state.numero} />
+                <Form passo={this.state.passo} setPasso={this.setPasso} />
+                <Botoes setInc={this.inc} setDec={this.dec} setClean={this.clean}/>
+
             </div>
         )
     }
@@ -48,3 +60,11 @@ class Contador extends React.Component {
 }
 
 export default Contador
+
+
+
+
+const obj = {
+    idade: 10,
+    nome: 'andré',
+}

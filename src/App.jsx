@@ -27,7 +27,7 @@ export default _ =>
         <div className="Cards">
 
             <Card titulo='#13 - Contador' tt='#FFB73A'>
-                <Contador numeroInicial={10}/>
+                <Contador/>
             </Card>
 
             <Card titulo='#12 - Componente Controlado' tt='#6495ED'>
